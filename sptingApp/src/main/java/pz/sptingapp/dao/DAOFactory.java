@@ -10,7 +10,7 @@ public class DAOFactory {
         if (type == TypeDAO.MySQL) {
             dao = new MySQLDAO();
         }
-        if (type == TypeDAO.MySQL) {
+        if (type == TypeDAO.MyCOLLECTION) {
             dao = new CollectionLDAO();
         }
         return dao;
