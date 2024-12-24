@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Teams with Players</title>
+  <meta charset="UTF-8"/>
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <th:block th:insert="~{topMenu}"></th:block>
+  <div class="main-content">
+    <h2>Teams with Players</h2>
+    <table class="table table-hover">
+      <tr>
+        <th>Team Name</th>
+        <th>Players</th>
+      </tr>
+      <tr th:each="team : ${teamsWithPlayers}">
+        <td th:text="${team.teamName}"></td>
+        <td>
+          <ul>
+            <li th:each="player : ${team.players}" th:text="${player.playerName}"></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>

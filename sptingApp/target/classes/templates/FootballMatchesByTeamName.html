@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Matches by team name</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Matches by team name</h2>
+        <form th:action="@{/FootballMatchesByTeamName}" method="POST">
+            <div class="form-group">
+                <label for="teamName">Team name:</label>
+                <input type="text" class="form-control" id="teamName" name="teamName" placeholder="Enter team name" required/>
+            </div>
+            <button type="submit" class="btn btn-primary">Search matches</button>
+        </form>
+        <div th:if="${allFootballMatches != null}">
+            <h3>Matches by team name</h3>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Match date</th>
+                    <th>Number of teams</th>
+                    <th>Duration</th>
+                    <th>Team name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="footballMatch : ${allFootballMatches}">
+                    <td th:text="${footballMatch.matchID}"></td>
+                    <td th:text="${footballMatch.name}"></td>
+                    <td th:text="${footballMatch.location}"></td>
+                    <td th:text="${footballMatch.matchDate}"></td>
+                    <td th:text="${footballMatch.numberOfTeams}"></td>
+                    <td th:text="${footballMatch.duration}"></td>
+                    <td th:text="${footballMatch.teamName}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

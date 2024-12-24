@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit match</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Edit match</h2>
+        <form th:action="@{/editFootballMatch/save}" th:object="${footballMatch}" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter name" th:field="*{name}" readonly/>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" placeholder="Enter location" th:field="*{location}" required/>
+            </div>
+            <div class="form-group">
+                <label for="matchDate">Match date</label>
+                <input type="date" id="matchDate" class="form-control" th:field="*{matchDate}" required/>
+            </div>
+            <div class="form-group">
+                <label for="numberOfTeams">Number of teams</label>
+                <input type="number" id="numberOfTeams" class="form-control" th:field="*{numberOfTeams}" required/>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="number" id="duration" class="form-control" th:field="*{duration}" required/>
+            </div>
+            <div class="form-group">
+                <label for="teamName">Team name</label>
+                <input type="text" id="teamName" class="form-control" placeholder="Enter team name" th:field="*{teamName}" required/>
+            </div>
+            <button type="submit" class="btn btn-primary">Save match</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

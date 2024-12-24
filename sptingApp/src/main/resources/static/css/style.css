@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #4B0082, #6495ED);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #4B0082, #6A5ACD);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.navbar button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: #FFF;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #483D8B;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #6A5ACD;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background: linear-gradient(to bottom, #6495ED, #E6E6FA);
+    overflow-y: auto;
+}
+
+.main-content h2 {
+    margin-top: 0;
+    color: #4B0082;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #483D8B;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #483D8B;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #F8F8FF;
+}
+
+button.btn {
+    padding: 12px 25px;
+    border: none;
+    background-color: #4B0082;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #6A5ACD;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #E6E6FA;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #483D8B;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background: linear-gradient(to bottom, #4B0082, #6A5ACD);
+    color: #FFF;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #D8BFD8;
+}
+
+table tr:hover {
+    background-color: #ADD8E6;
+    transition: background-color 0.3s ease;
+}
+
+table td {
+    color: #483D8B;
+    font-size: 14px;
+}

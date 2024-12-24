@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add player</title>
+  <meta charset="UTF-8"/>
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <th:block th:insert="~{topMenu}"></th:block>
+  <div class="main-content">
+    <h2>Add player</h2>
+    <form th:action="@{/addPlayer}" method="post">
+      <div class="form-group">
+        <label for="teamName">Team Name:</label>
+        <select id="teamName" name="teamName" required>
+          <option th:each="team : ${teams}"
+                  th:value="${team.teamName}"
+                  th:text="${team.teamName}"></option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="playerName">Player Name:</label>
+        <input type="text" id="playerName" class="form-control" name="playerName" required/>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Add player</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

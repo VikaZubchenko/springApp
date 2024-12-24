@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mathches</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{topMenu}"></th:block>
+    <div class="main-content">
+        <h2>Mathches</h2>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Match date</th>
+                <th>Number of teams</th>
+                <th>Duration</th>
+                <th>Team name</th>
+            </tr>
+            <tr th:each="footballMatch : ${allFootballMatches}">
+                <td th:text="${footballMatch.matchID}"></td>
+                <td th:text="${footballMatch.name}"></td>
+                <td th:text="${footballMatch.location}"></td>
+                <td th:text="${footballMatch.matchDate}"></td>
+                <td th:text="${footballMatch.numberOfTeams}"></td>
+                <td th:text="${footballMatch.duration}"></td>
+                <td th:text="${footballMatch.teamName}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
